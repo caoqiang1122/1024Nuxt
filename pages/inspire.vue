@@ -1,6 +1,8 @@
 <template>
-  <div v-for="item in hotCity" :v-for="item.id">
-    {{item.name}}
+  <div>
+    <div v-for="item in hotCity" :key="item.id">
+      {{item.name}}
+    </div>
   </div>
 </template>
 
