@@ -67,7 +67,18 @@
 
 <script>
 import '~/assets/css/page-sj-recruit-index.css'
+import recruitApi from '@/api/recruit-api'
+import enterpriseApi from '@/api/enterprise-api'
+import axios from 'axios'
 export default {
-  
+  asyncData () {
+    return axios.all([recruitApi.getCity(), enterpriseApi.getCity()])
+      .then(axios.spread(function (cityList, enterpriseList) {
+        return {
+          cityList: cityList.data.data,
+          enterpriseList: enterpriseList.data.data
+        }
+      }))
+  }
 }
 </script>
