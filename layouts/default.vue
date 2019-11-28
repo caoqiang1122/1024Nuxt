@@ -1,37 +1,37 @@
 <template>
   <div>
-    <div class="wrapper">
-      <header>
+    <header>
+      <div class="wrapper">
         <div class="sui-navbar"> 
-        <div class="navbar-inner"> 
-          <a href="index-logined.html" class="sui-brand"><img src="~/assets/img/asset-logo-black.png" alt="社交" /></a> 
-          <ul class="sui-nav"> 
-          <li class="active"><a href="~/assets/headline-logined.html">头条</a></li> 
-          <li><a href="~/assets/qa-logined.html">问答</a></li> 
-          <li><a href="~/assets/activity-index.html">活动</a></li> 
-          <li><a href="~/assets/makeFriends-index.html">交友</a></li> 
-          <li><a href="~/assets/spit-index.html">吐槽</a></li> 
-          <li><a href="~/assets/recruit-index.html">招聘</a></li> 
-          </ul> 
-          <form class="sui-form sui-form pull-left"> 
-          <input type="text" placeholder="输入关键词..." /> 
-          <span class="btn-search fa fa-search"></span> 
-          </form> 
-          <div class="sui-nav pull-right info"> 
-          <li><a href="~/assets/other-notice.html" target="_blank" class="notice">通知</a></li> 
-          <li class="hover"> <span class="fa fa-plus "></span> 
-            <ul class="hoverinfo"> 
-            <li><i class="fa fa-share-alt" aria-hidden="true"></i> <a href="~/assets/headline-submit.html">去分享</a></li> 
-            <li><i class="fa fa-question-circle" aria-hidden="true"></i> <a href="~/assets/qa-submit.html" target="_blank">提问题</a></li> 
-            <li><i class="fa fa-comments" aria-hidden="true"></i><a href="~/assets/spit-submit.html" target="_blank">去吐槽</a></li> 
-            <li><i class="fa fa-heartbeat" aria-hidden="true"></i> <a href="~/assets/makeFriends-submit.html" target="_blank">发约会</a></li> 
-            </ul> </li> 
-          <li><a href="~/assets/person-homepage.html" target="_blank" class="homego"><img src="~/assets/img/widget-photo.png" alt="用户头像" /></a></li> 
+          <div class="navbar-inner"> 
+            <a href="index-logined.html" class="sui-brand"><img src="~/assets/img/asset-logo-black.png" alt="社交" /></a> 
+            <ul class="sui-nav"> 
+            <li class="active"><a href="/">头条</a></li> 
+            <li><a href="/qa">问答</a></li> 
+            <li><a href="/gathering">活动</a></li> 
+            <li><a href="/friend">交友</a></li> 
+            <li><a href="/spit">吐槽</a></li> 
+            <li><a href="/recruit">招聘</a></li> 
+            </ul> 
+            <form class="sui-form sui-form pull-left"> 
+            <input type="text" placeholder="输入关键词..." /> 
+            <span class="btn-search fa fa-search"></span> 
+            </form> 
+            <div class="sui-nav pull-right info"> 
+            <li><a href="~/assets/other-notice.html" target="_blank" class="notice">通知</a></li> 
+            <li class="hover"> <span class="fa fa-plus "></span> 
+              <ul class="hoverinfo"> 
+              <li><i class="fa fa-share-alt" aria-hidden="true"></i> <a href="~/assets/headline-submit.html">去分享</a></li> 
+              <li><i class="fa fa-question-circle" aria-hidden="true"></i> <a href="~/assets/qa-submit.html" target="_blank">提问题</a></li> 
+              <li><i class="fa fa-comments" aria-hidden="true"></i><a href="~/assets/spit-submit.html" target="_blank">去吐槽</a></li> 
+              <li><i class="fa fa-heartbeat" aria-hidden="true"></i> <a href="~/assets/makeFriends-submit.html" target="_blank">发约会</a></li> 
+              </ul> </li> 
+            <li><a href="~/assets/person-homepage.html" target="_blank" class="homego"><img src="~/assets/img/widget-photo.png" alt="用户头像" /></a></li> 
+            </div> 
           </div> 
         </div> 
-        </div> 
-      </header>
-    </div>
+      </div>
+    </header>
     <!-- 内容区域 pages文件夹下面的内容 -->
     <nuxt></nuxt>
     <footer>
