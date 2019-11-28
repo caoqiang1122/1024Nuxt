@@ -30,6 +30,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    // 服务端渲染关闭，只有首页在服务端渲染
+    {src:'~plugins/vue-infinite-scroll.js',ssr: false}
   ],
   /*
   ** Nuxt.js dev-modules

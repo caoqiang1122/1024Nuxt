@@ -5,13 +5,13 @@
         <div class="sui-navbar"> 
           <div class="navbar-inner"> 
             <a href="index-logined.html" class="sui-brand"><img src="~/assets/img/asset-logo-black.png" alt="社交" /></a> 
-            <ul class="sui-nav"> 
-            <li class="active"><a href="/">头条</a></li> 
-            <li><a href="/qa">问答</a></li> 
-            <li><a href="/gathering">活动</a></li> 
-            <li><a href="/friend">交友</a></li> 
-            <li><a href="/spit">吐槽</a></li> 
-            <li><a href="/recruit">招聘</a></li> 
+            <ul class="sui-nav">
+              <router-link tag='li' to='/' active-class='active' exact><a>头条</a></router-link>
+              <router-link tag='li' to='/qa' active-class='active'><a>问答</a></router-link>
+              <router-link tag='li' to='/gathering' active-class='active'><a>活动</a></router-link>
+              <router-link tag='li' to='/friend' active-class='active'><a>交友</a></router-link>
+              <router-link tag='li' to='/spit' active-class='active'><a>吐槽</a></router-link>
+              <router-link tag='li' to='/recruit' active-class='active'><a>招聘</a></router-link>
             </ul> 
             <form class="sui-form sui-form pull-left"> 
             <input type="text" placeholder="输入关键词..." /> 

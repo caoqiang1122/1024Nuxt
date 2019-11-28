@@ -6,7 +6,7 @@
         <h4 class="latest">最新活动</h4>
         <div class="clearfix"></div> 
         </div> 
-        <div class="activity-list"> 
+        <div class="activity-list" v-infinite-scroll="loadMore">
         <ul class="activity"> 
           <li class="activity-item"> 
           <div class="activity-inner"> 
@@ -233,7 +233,29 @@
 
 <script>
 import '~/assets/css/page-sj-activity-index.css'
+import gatheringApi from '@/api/gathering-api'
 export default {
-  
+  data () {
+    return {
+      pageNo: 1
+    }
+  },
+  // asyncData () {
+  //   return gatheringApi.getHotCity(1,12,{state:"1"})
+  //     .then( res => {
+  //       return {
+  //         items: res.data.data.rows
+  //       }
+  //     })
+  // },
+  methods: {
+    loadMore () {
+      this.pageNo++
+      gatheringApi.getHotCity(this.pageNo,12,{state:"1"})
+        .then( res => {
+          this.items = this.items.concat(res.data.data.rows)
+        })
+    }
+  }
 }
 </script>
