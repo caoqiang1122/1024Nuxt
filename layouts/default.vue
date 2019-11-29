@@ -17,17 +17,22 @@
             <input type="text" placeholder="输入关键词..." /> 
             <span class="btn-search fa fa-search"></span> 
             </form> 
-            <div class="sui-nav pull-right info"> 
-            <li><a href="~/assets/other-notice.html" target="_blank" class="notice">通知</a></li> 
-            <li class="hover"> <span class="fa fa-plus "></span> 
-              <ul class="hoverinfo"> 
-              <li><i class="fa fa-share-alt" aria-hidden="true"></i> <a href="~/assets/headline-submit.html">去分享</a></li> 
-              <li><i class="fa fa-question-circle" aria-hidden="true"></i> <a href="~/assets/qa-submit.html" target="_blank">提问题</a></li> 
-              <li><i class="fa fa-comments" aria-hidden="true"></i><a href="~/assets/spit-submit.html" target="_blank">去吐槽</a></li> 
-              <li><i class="fa fa-heartbeat" aria-hidden="true"></i> <a href="~/assets/makeFriends-submit.html" target="_blank">发约会</a></li> 
-              </ul> </li> 
-            <li><a href="~/assets/person-homepage.html" target="_blank" class="homego"><img src="~/assets/img/widget-photo.png" alt="用户头像" /></a></li> 
-            </div> 
+            <div class="sui-nav pull-right info" v-if="user.name !== undefined"> 
+              <li><a href="~/assets/other-notice.html" target="_blank" class="notice">通知</a></li> 
+              <li class="hover"> <span class="fa fa-plus "></span> 
+                <ul class="hoverinfo"> 
+                <li><i class="fa fa-share-alt" aria-hidden="true"></i> <a href="~/assets/headline-submit.html">去分享</a></li> 
+                <li><i class="fa fa-question-circle" aria-hidden="true"></i> <a href="~/assets/qa-submit.html" target="_blank">提问题</a></li> 
+                <li><i class="fa fa-comments" aria-hidden="true"></i><a href="~/assets/spit-submit.html" target="_blank">去吐槽</a></li> 
+                <li><i class="fa fa-heartbeat" aria-hidden="true"></i> <a href="~/assets/makeFriends-submit.html" target="_blank">发约会</a></li> 
+                </ul> </li>
+              <li><a href="./other-notice.html" target="_blank" class="notice">{{user.name}}</a></li> 
+              <li><a @click="logout()" class="notice">退出</a></li>
+              <li><a href="~/assets/person-homepage.html" target="_blank" class="homego"><img src="user.avatar" alt="用户头像" /></a></li> 
+            </div>
+            <div class="sui-nav pull-right info" v-if="user.name === undefined">
+              <router-link to="/login">登录</router-link>
+            </div>
           </div> 
         </div> 
       </div>
@@ -113,8 +118,22 @@ import '~/assets/plugins/font-awesome/css/font-awesome.min.css'
 import '~/assets/css/widget-base.css'
 import '~/assets/css/widget-head-foot.css'
 import '~/assets/css/page-headline-logined.css'
+import { getUser,removeUser } from '@/util/auth.js'
 export default {
-  name: ''
+  data () {
+    return {
+      user: {}
+    }
+  },
+  created () {
+    this.user = getUser()
+  },
+  methods: {
+    logout () {
+      removeUser()
+      location.href('/login')
+    }
+  }
 }
 </script>
 
