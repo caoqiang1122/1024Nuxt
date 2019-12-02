@@ -60,8 +60,9 @@
           </div> 
           <div class="controls"> 
           <label> <input type="checkbox" name="remember-me" /><span class="type-text" style="font-size:12px;">记住登录状态</span> </label> 
-          <button type="button" @click="login()" class="sui-btn btn-danger btn-yes">登 录</button> 
+          <button type="button" @click="login()" class="sui-btn btn-danger btn-yes">登 录</button>
           </div> 
+          <div id="weixin"></div>
           <div class="other-methods"> 
           </div> 
         </form> 
@@ -123,6 +124,25 @@ export default {
         }
       })
     }
+  },
+  mounted () {
+    //在需要使用微信登录的地方实例以下JS对象：
+    var obj = new WxLogin({
+      self_redirect:true,
+      id:"weixin", 
+      appid: "wx3bdb1192c22883f3", 
+      scope: "snsapi_login", 
+      redirect_uri: "http://note.java.itcast.cn/weixinlogin",
+      state: "",
+      style: "",
+      href: ""
+      })
+  },
+  // 引入外部js或者css
+  head: {
+    script:[
+      {src: 'http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js'}
+    ]
   }
 }
 </script>
